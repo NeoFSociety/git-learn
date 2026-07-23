@@ -1,13 +1,11 @@
 package main
 
 import (
-	"fmt"
-	"git-learn/feature1"
+	"git-learn/postgres"
 )
 
 func main() {
 
-	fmt.Println("Learning Git!")
+	postgres.CheckConnection()
 
-	feature1.Feature1()
 }
