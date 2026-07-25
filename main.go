@@ -1,11 +1,20 @@
 package main
 
 import (
-	"git-learn/postgres"
+	"context"
+	"git-learn/postgres/db_connection"
+	"git-learn/postgres/sql"
 )
 
 func main() {
 
-	postgres.CheckConnection()
+	ctx := context.Background()
+
+	conn, err := db_connection.CreateConnection(ctx)
+	if err != nil {
+		panic(err)
+	}
+
+	sql.CreateTable(ctx, conn)
 
 }
