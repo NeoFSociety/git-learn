@@ -18,6 +18,10 @@ func main() {
 
 	tasks, err := sql.GetData(ctx, conn)
 
+	if err != nil {
+		panic(err)
+	}
+
 	for _, task := range tasks {
 		fmt.Println("-----------------------------")
 		fmt.Println("id:", task.Id)
