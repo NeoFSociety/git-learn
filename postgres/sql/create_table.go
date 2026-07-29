@@ -9,7 +9,7 @@ import (
 func CreateTable(ctx context.Context, conn *pgx.Conn) error {
 
 	sqlQuery := `
-	CREATE TABLE tasks (
+	CREATE TABLE IF NOT EXISTS tasks (
 		id SERIAL PRIMARY KEY,
 		title VARCHAR(200) NOT NULL,
 		description VARCHAR(1000) NOT NULL,
